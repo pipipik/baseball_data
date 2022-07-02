@@ -1,0 +1,14 @@
+<%= form_with(model: record, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :date, "日付" %><br />
+    <%= f.date_select :date , class: :form__text %>
+  </div>
+  <div class="field">
+    <%= f.label :result, "打撃結果" %><br />
+    <%= f.collection_select :position_id, Position.all, :id, :name, {}, class: :form__text %>
+    <%= f.collection_select :result_id, Result.all, :id, :name, {}, class: :form__text %>
+  </div>
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
