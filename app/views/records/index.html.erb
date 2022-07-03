@@ -13,11 +13,11 @@
       <% @records.each do |record| %>
         <div class="card">
           <div class="card_date">
-            <%= link_to "日付", root_path, class: :card__link %>：
+            <%= link_to "日付", edit_record_path(record.id), class: :card__link %>：
             <%= record.date %>
           </div>
           <div class="card_result">
-            <%= link_to "打撃結果", root_path, class: :card__link %>：
+            <%= link_to "打撃結果", edit_record_path(record.id), class: :card__link %>：
             <%= record.position.name %>
             <%= record.result.name %>
           </div>
