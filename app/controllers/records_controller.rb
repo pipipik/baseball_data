@@ -3,6 +3,7 @@ class RecordsController < ApplicationController
   
   def index
     @records = Record.all.order("date DESC").limit(5)
+    @users = User.all.order("number ASC")
   end
 
   def new
