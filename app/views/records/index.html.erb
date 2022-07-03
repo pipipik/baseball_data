@@ -1,2 +1,43 @@
-<h1>Records#index</h1>
-<p>Find me in app/views/records/index.html.erb</p>
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to current_user.name, root_path, class: :greeting__link %>
+        さん
+      </div>
+    <% end %>
+
+    <div class="card__wrapper">
+      <h2 class="page-heading">最近５打席</h2>
+      <% @records.each do |record| %>
+        <div class="card">
+          <div class="card_date">
+            <%= link_to "日付", root_path, class: :card__link %>：
+            <%= record.date %>
+          </div>
+          <div class="card_result">
+            <%= link_to "打撃結果", root_path, class: :card__link %>：
+            <%= record.position.name %>
+            <%= record.result.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="card__wrapper">
+      <h2 class="page-heading">選手一覧</h2>
+      <table border="1">
+        <tr>
+          <th>背番号</th>
+          <th>選手名</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.number %></td>
+          <td><%= link_to user.name, root_path, class: :card__link %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</main>

@@ -2,6 +2,8 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   
   def index
+    @records = Record.all.order("date DESC").limit(5)
+    @users = User.all.order("number ASC")
   end
 
   def new

@@ -93,11 +93,29 @@ a {
 }
 
 /* メイン */
+.greeting{
+  margin-bottom: 20px;
+}
+.greeting__link{
+  text-decoration: underline;
+  color: #ec2603ea
+}
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
 }
-
+.card__wrapper {
+  min-height: calc(100vh - 161px);
+}
+.card {
+  margin-bottom: 20px;
+}
+.card__link{
+  text-decoration: underline;
+}
+table{
+  width: 30%;
+}
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 150px);
