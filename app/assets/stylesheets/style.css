@@ -113,7 +113,9 @@ a {
 .card__link{
   text-decoration: underline;
 }
-
+table{
+  width: 30%;
+}
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 150px);

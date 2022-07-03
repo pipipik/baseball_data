@@ -24,5 +24,20 @@
         </div>
       <% end %>
     </div>
+    <div class="card__wrapper">
+      <h2 class="page-heading">選手一覧</h2>
+      <table border="1">
+        <tr>
+          <th>背番号</th>
+          <th>選手名</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.number %></td>
+          <td><%= link_to user.name, root_path, class: :card__link %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </main>
